@@ -28,9 +28,8 @@ public class PlayerControllerWithTapGesture : MonoBehaviour {
     }
 
     private void OnTap(object sender, System.EventArgs e) {
-        if (sender is TapGesture gesture) {
             _baloons.Die();
-        }
+        
     }
 
 

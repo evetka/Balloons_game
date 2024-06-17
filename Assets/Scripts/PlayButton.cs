@@ -21,7 +21,7 @@ public class PlayButton : MonoBehaviour {
 
     private void OnTap(object sender, System.EventArgs e) {
         if (sender is TapGesture gesture) {
-            _balloonCreator.StartGame();
+            _balloonCreator.CreateBalloons();
             gameObject.SetActive(false);
         }
     }

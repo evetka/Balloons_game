@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6c2fff4877d4344b475dcb0b0f8018, type: 3}
+  m_Name: Toy Data
+  m_EditorClassIdentifier: 
+  Toys:
+  - ToyPrefab: {fileID: 1917925895928914166, guid: f80d4611ced88ee45934fd8408da4858,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: 4559290483638225199, guid: f2daa25b76676c240becf7c23c70e9e4,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: 5198822459776270750, guid: ca4131ce6100dec4ba97049a34e0275e,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: -5264886238679181547, guid: 6c99d63fde138034dbecd7fba85c8cb1,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: 5405939554416776850, guid: a546d447122b1f445b000e6d57618901,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: 1942333845654293788, guid: a30e5a35b407cbe48a33e33df20c77fe,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: 69289411956762322, guid: c3da0fb6f405f5a42a65d632b1bbda5b,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
+  - ToyPrefab: {fileID: 909793848593914638, guid: 68b8f0bfe56b63b4eb505da15ffacc1d,
+      type: 3}
+    ToyParts:
+    - {fileID: 706558619353631037, guid: dd87475b3a55c4c4ca24c74bd1ce0cc4, type: 3}
+    - {fileID: 7600072924953198398, guid: d782442f14ee9eb40b81e3cee09f7f3a, type: 3}
+    - {fileID: 4368084409998829638, guid: 673b7ccbc9f33104ea55e5d025559726, type: 3}
