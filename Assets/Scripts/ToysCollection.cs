@@ -1,11 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public struct ToyData {
-    public Toy ToyPrefab;
-    public List<ToyPart> ToyParts;
+    
+    public Texture ToyPrint;
+    public ToyModel ToyModel;    
+    public Toy FinishToy;
+        
 }
 
 [CreateAssetMenu]

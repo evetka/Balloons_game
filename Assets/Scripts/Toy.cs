@@ -3,15 +3,12 @@ using UnityEngine;
 
 public class Toy : MonoBehaviour {
 
-    //[SerializeField] private Transform _toyFinalPosition;
-    [SerializeField] private ParticleSystem _toyShowEffect;
     [SerializeField] private Vector3 _positionOnShelf;
+    [SerializeField] private AnimationCurve _animationCurve;
     
 
-    public void ToyAnimation() {
-        //Instantiate(_toyShowEffect, transform.position, Quaternion.identity);
-        
-        StartCoroutine(MoveToPosition(Vector3.down, _positionOnShelf));
+    public void ToyAnimation() {  
+        StartCoroutine(MoveToPosition(new Vector3(0f, 0f, -4f), _positionOnShelf));
     }
 
     
@@ -23,6 +20,7 @@ public class Toy : MonoBehaviour {
         
         for (float t = 0; t < 2f; t += Time.deltaTime) {
             transform.position = Bezier.GetPoint(a, b, c, d, t);
+            transform.localScale = new Vector3(_animationCurve.Evaluate(t), _animationCurve.Evaluate(t), _animationCurve.Evaluate(t));
             yield return null;
         }        
     }

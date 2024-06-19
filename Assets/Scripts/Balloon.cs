@@ -6,12 +6,13 @@ public class Balloon : MonoBehaviour {
     [SerializeField] private Renderer _meshRenderer;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject _collider;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _ballonHitEffect;
+    [SerializeField] private Material _ballonHitEffectMaterial;
+
     [SerializeField] private float _speedMove;
 
     private ProgressManager _progressManager;
     private Color _color;
-
 
     public void Init(float speed, Color color, ProgressManager progressManager) {
         _speedMove = speed;
@@ -31,18 +32,10 @@ public class Balloon : MonoBehaviour {
         _rigidbody.velocity += _speedMove * Vector3.up;
     }
 
-
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.collider == null) {
-            if (collision.collider.GetComponent<Balloon>()) {
-                collision.rigidbody.AddForceAtPosition(collision.contacts[0].normal, collision.contacts[0].point);
-            }
-        }
-    }
-
+   
     public void Die() {
-        ParticleSystem newParticleSystem = Instantiate(_particleSystem, transform.position, Quaternion.identity);
-        newParticleSystem.startColor = _color;
+        Instantiate(_ballonHitEffect, transform.position, Quaternion.identity);
+        _ballonHitEffectMaterial.color = _color;
         _collider.transform.localScale *= 2f;
         _progressManager.BallonHit(transform.position);
         Destroy(gameObject, 0.1f);
