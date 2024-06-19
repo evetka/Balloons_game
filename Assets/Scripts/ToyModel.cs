@@ -5,7 +5,7 @@ public class ToyModel : MonoBehaviour {
 
     [SerializeField] private ParticleSystem _toyShowEffect;
     [SerializeField] private AnimationCurve _animationCurve;
-    //[SerializeField] private Outline _outline;
+    [SerializeField] private Outline _outline;
 
 
     public void ToyModelAnimation(Vector3 finalPosition) {
@@ -22,13 +22,10 @@ public class ToyModel : MonoBehaviour {
         for (float t = 0; t < 1f; t += Time.deltaTime) {
             transform.position = Bezier.GetPoint(a, b, c, d, t);
             transform.localScale = new Vector3(_animationCurve.Evaluate(t), _animationCurve.Evaluate(t), _animationCurve.Evaluate(t));
-            /*
-            _outline.OutlineWidth = 10f - t * 8;
-            if (t > 1f) {                
-                _outline.enabled = false;
-            }*/
+            
             yield return null;
         }
+        _outline.enabled = false;
     }
 
     public void Die() {

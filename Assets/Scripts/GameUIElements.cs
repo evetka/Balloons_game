@@ -8,10 +8,21 @@ public class GameUIElements : MonoBehaviour
 
     public void ShowResult() {
         _timer.SetActive(false);
-        StartCoroutine(nameof(ScaleScoreElements));
+        StartCoroutine(nameof(UpScaleScoreElements));
     }
 
-    IEnumerator ScaleScoreElements() {
+    public void ShowContinueUI() {
+        _timer.SetActive(true);
+        StartCoroutine(nameof(UnScaleScoreElements));
+    }
+    IEnumerator UnScaleScoreElements() {
+        for (float t = 0; t > 1.5f; t -= Time.deltaTime * 3f) {
+            _score.transform.localScale = Vector3.one * t;
+            yield return null;
+        }
+    }
+
+    IEnumerator UpScaleScoreElements() {
         for (float t = 0; t < 1.5f; t += Time.deltaTime * 3f) {
             _score.transform.localScale = Vector3.one * t;            
             yield return null;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProgressManager : MonoBehaviour {
 
+    [SerializeField] private int _hitBalloonsAfterLastCreateToy;
+    [SerializeField] private int onToyCreateChance;
     [SerializeField] private int _score;
     [SerializeField] private int _timer;
     [SerializeField] private int _toys;
@@ -26,6 +28,10 @@ public class ProgressManager : MonoBehaviour {
         _textTimer.text = _timer.ToString();
         _toys = 0;
         _textToys.text = _toys.ToString();
+
+        _hitBalloonsAfterLastCreateToy = 0;
+        onToyCreateChance = Random.Range(3, 8);
+
         StartCoroutine(nameof(Countdown));
     }
 
@@ -38,15 +44,23 @@ public class ProgressManager : MonoBehaviour {
     }
 
     public void BallonHit(Vector3 spawnToy) {
-        _soungManager.OnHitSoundPlay();
+        _hitBalloonsAfterLastCreateToy++;
         _score++;
+        _soungManager.OnHitSoundPlay();
         _textBallons.text = _score.ToString();
-        if (_score % 2 == 0) {
+                
+        if (_hitBalloonsAfterLastCreateToy % onToyCreateChance == 0) {
             _toysManager.AssemblyToy(spawnToy);
         }
     }
 
-    public void AddToyScore(int score) {
+    public void ToyCreateChance() {
+        _hitBalloonsAfterLastCreateToy = 0;
+        onToyCreateChance = Random.Range(3, 8);
+    }
+
+
+    public void AddToyScore(int score) {        
         _toys = score;
         _textToys.text = _toys.ToString();
     }
@@ -57,7 +71,7 @@ public class ProgressManager : MonoBehaviour {
         while (_countdown > 0) {
             _textCountdown.text = _countdown.ToString();
             for (float t = 0; t < 1; t += Time.deltaTime) {
-                _textCountdown.fontSize = t * 155f;
+                _textCountdown.fontSize = t * 350f;
                 yield return null;
             }
             _countdown--;
@@ -69,7 +83,7 @@ public class ProgressManager : MonoBehaviour {
     }
 
     private IEnumerator Timer() {
-        while (_timer < 30) {
+        while (_timer < 90) {
             yield return new WaitForSeconds(1f);
             _timer++;
             _textTimer.text = _timer.ToString();

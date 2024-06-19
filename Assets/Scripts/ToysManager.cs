@@ -65,12 +65,15 @@ public class ToysManager : MonoBehaviour {
 
         if (CreateToyStep == 0) {            
             CreateToyPrint(spawnToy);
+            _progressManager.ToyCreateChance();
         }
         else if (CreateToyStep == 1) {            
             CreateClayModel(spawnToy);
+            _progressManager.ToyCreateChance();
         }
         else if (CreateToyStep == 2) {
             CreatePaintTool(spawnToy);
+            _progressManager.ToyCreateChance();
         }        
         else {
             CreateToyStep = 0;
@@ -113,8 +116,8 @@ public class ToysManager : MonoBehaviour {
         _toyModel.Die();
         _toyModel = null;
 
-        Instantiate(_toyCreateEffect, _paintTool.transform.position, Quaternion.identity);
-        Toy newFinishtoy = Instantiate(_currentToy.FinishToy, _paintTool.transform.position, Quaternion.identity, transform);
+        Instantiate(_toyCreateEffect, transform.position + Vector3.back, Quaternion.identity);
+        Toy newFinishtoy = Instantiate(_currentToy.FinishToy, transform.position, Quaternion.identity, transform);
 
         ToysOnShelf.Add(newFinishtoy);
         _progressManager.AddToyScore(ToysOnShelf.Count);

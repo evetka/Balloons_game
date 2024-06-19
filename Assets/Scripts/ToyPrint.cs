@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToyPrint : MonoBehaviour {
 
@@ -7,7 +8,7 @@ public class ToyPrint : MonoBehaviour {
     [SerializeField] private ParticleSystem _toyShowEffect;
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] Animator _animator;
-    //[SerializeField] private Outline _outline;
+    [SerializeField] private Outline _outline;
     
     public void Init(Texture print, Vector3 startPosition) {
         transform.position = startPosition;
@@ -15,6 +16,7 @@ public class ToyPrint : MonoBehaviour {
     }
 
     public void ToyModelAnimation(Vector3 finalPosition) {
+        _outline.enabled = true;
         _animator.SetTrigger("Fly");
         StartCoroutine(MoveToPosition(transform.position, finalPosition));
     }
@@ -28,14 +30,11 @@ public class ToyPrint : MonoBehaviour {
         for (float t = 0; t < 2f; t += Time.deltaTime) {
             transform.position = Bezier.GetPoint(a, b, c, d, t);
             transform.localScale = new Vector3(_animationCurve.Evaluate(t), _animationCurve.Evaluate(t), _animationCurve.Evaluate(t));
-            /*
-            _outline.OutlineWidth = 10f - t * 8;
-            if (t > 1f) {                
+            if (t > 1f) {
                 _outline.enabled = false;
-            }*/
+            }
             yield return null;
-        }
-
+        }      
     }
 
     public void Die() {

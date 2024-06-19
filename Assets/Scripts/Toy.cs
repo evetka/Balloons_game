@@ -5,7 +5,8 @@ public class Toy : MonoBehaviour {
 
     [SerializeField] private Vector3 _positionOnShelf;
     [SerializeField] private AnimationCurve _animationCurve;
-    
+    [SerializeField] private Outline _outline;
+
 
     public void ToyAnimation() {  
         StartCoroutine(MoveToPosition(new Vector3(0f, 0f, -4f), _positionOnShelf));
@@ -21,8 +22,14 @@ public class Toy : MonoBehaviour {
         for (float t = 0; t < 2f; t += Time.deltaTime) {
             transform.position = Bezier.GetPoint(a, b, c, d, t);
             transform.localScale = new Vector3(_animationCurve.Evaluate(t), _animationCurve.Evaluate(t), _animationCurve.Evaluate(t));
+            
+            if(t > 1f) {
+                _outline.enabled = false;
+            }
+
             yield return null;
-        }        
+        }
+        
     }
 
     public void Die() {

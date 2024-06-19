@@ -59,9 +59,11 @@ public class GameStateManager : MonoBehaviour
     public void OffCountdownWindow() {
         _countdown.SetActive(false);
         _gameUI.SetActive(true);
+        _gameUIElements.ShowContinueUI();
     }
 
     public void ResultWindow() {
+        _soungManager.Applause();
         Instantiate(_particleSystem);
         _balloonCreator.EndGame();
         _soungManager.OffPlayBGSound();

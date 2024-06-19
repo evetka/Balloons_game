@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoungManager : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> _hitBallonSound = new List<AudioClip>();
+    [SerializeField] private AudioClip _applause;
     [SerializeField] private AudioSource _audioSource;
 
     [SerializeField] private float _backgroundVolume;
@@ -16,6 +17,9 @@ public class SoungManager : MonoBehaviour
         _audioSource.PlayOneShot(ChoiceHitBallonSound(), _hitEffectVolume); 
     }
 
+    public void Applause() {
+        _audioSource.PlayOneShot(_applause, 1f);
+    }
 
     public void OnPlayBGSound() {
         float volume = Mathf.Min(1f, _backgroundVolume);

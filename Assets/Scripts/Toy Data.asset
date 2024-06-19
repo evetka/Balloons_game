@@ -48,13 +48,18 @@ MonoBehaviour:
       type: 3}
     FinishToy: {fileID: -2094830526792307982, guid: b7800f97bdfc9ce438f3c9d7cb3f6b6c,
       type: 3}
-  - ToyPrint: {fileID: 2800000, guid: 696641e49aa5cfe4c863adc852b0ee99, type: 3}
-    ToyModel: {fileID: 5452395765132501404, guid: 90e47b71619bcff4abbc86615ff304c9,
+  - ToyPrint: {fileID: 2800000, guid: 06208bbbdd7f8e24d89cdb7e59a1ad9a, type: 3}
+    ToyModel: {fileID: -4335397987360296122, guid: 68b8f0bfe56b63b4eb505da15ffacc1d,
       type: 3}
-    FinishToy: {fileID: 909793848593914638, guid: 68b8f0bfe56b63b4eb505da15ffacc1d,
+    FinishToy: {fileID: 909793848593914638, guid: 564b7d71742251242928f67396274fa8,
       type: 3}
   - ToyPrint: {fileID: 2800000, guid: 8d165d18c5ed50147a833cd7d260be71, type: 3}
     ToyModel: {fileID: -2086365554722196820, guid: cac8ba66b50e2584db11441e95e97afa,
       type: 3}
     FinishToy: {fileID: 69289411956762322, guid: c3da0fb6f405f5a42a65d632b1bbda5b,
+      type: 3}
+  - ToyPrint: {fileID: 2800000, guid: 99533bbc0e900ab4d86b6b15c1041d3f, type: 3}
+    ToyModel: {fileID: 2194356462271426815, guid: f4d85d755db8d0044856619702335d0e,
+      type: 3}
+    FinishToy: {fileID: 4428988221879703394, guid: 63c56db16bd0efc46a7a22080bfa7f2c,
       type: 3}
