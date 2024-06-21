@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class PlayerControllerWithTapGesture : MonoBehaviour {
 
-    [SerializeField] private TapGesture _tapGesture;
+    [SerializeField] private PressGesture _pressGesture;
     [SerializeField] private Balloon _baloons;
 
-    private void OnEnable() {        
-        _tapGesture.Tapped += OnTap;
+    private void OnEnable() {
+        _pressGesture.Pressed += PressGestures;
     }
 
-    private void OnDisable() {        
-        _tapGesture.Tapped -= OnTap;
+    private void OnDisable() {
+        _pressGesture.Pressed -= PressGestures;
     }
 
-    private void OnTap(object sender, System.EventArgs e) {
-            _baloons.Die();
+    private void PressGestures(object sender, System.EventArgs e) {
+        _baloons.Die();
     }
-
 
 }

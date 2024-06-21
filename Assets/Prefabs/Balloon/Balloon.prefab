@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 6032780529918251583}
   - component: {fileID: 3829835400071163479}
   - component: {fileID: 6896318629313244898}
-  - component: {fileID: 5280187334319498894}
+  - component: {fileID: 6561033895446906145}
   - component: {fileID: 8701278074245884228}
   m_Layer: 6
   m_Name: Balloon
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e223499a81211546bad0b657ab20fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tapGesture: {fileID: 5280187334319498894}
+  _pressGesture: {fileID: 6561033895446906145}
   _baloons: {fileID: 3829835400071163479}
---- !u!114 &5280187334319498894
+--- !u!114 &6561033895446906145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1980564838558636218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
+  m_Script: {fileID: 11500000, guid: c6be551879cd14d739b0188844ef2c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnStateChange:
@@ -154,14 +154,10 @@ MonoBehaviour:
   sendStateChangeEvents: 0
   requireGestureToFail: {fileID: 0}
   friendlyGestures: []
-  OnTap:
+  OnPress:
     m_PersistentCalls:
       m_Calls: []
-  numberOfTapsRequired: 1
-  timeLimit: Infinity
-  distanceLimit: Infinity
-  combinePointers: 0
-  combinePointersInterval: 0.3
+  ignoreChildren: 0
 --- !u!54 &8701278074245884228
 Rigidbody:
   m_ObjectHideFlags: 0
