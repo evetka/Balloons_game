@@ -19,7 +19,6 @@ public class ContinueButton : MonoBehaviour {
 
     private void OnTap(object sender, System.EventArgs e) {
         if (_canTapContinue == true) {
-            Debug.Log(_canTapContinue);
             _gameStateManager.ContinueGameState();
         }            
     }

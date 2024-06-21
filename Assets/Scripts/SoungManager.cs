@@ -12,8 +12,6 @@ public class SoungManager : MonoBehaviour
     [SerializeField] private float _hitEffectVolume;
 
     public void OnHitSoundPlay() {
-        //_audioSource.pitch = Random.Range(-0.5f, 0.5f);
-        //AudioSource.PlayClipAtPoint(ChoiceHitBallonSound(), Vector3.zero);
         _audioSource.PlayOneShot(ChoiceHitBallonSound(), _hitEffectVolume); 
     }
 
@@ -27,7 +25,7 @@ public class SoungManager : MonoBehaviour
     }
 
     public void OffPlayBGSound() {
-        StartCoroutine(ChangeBGSoundVolume(0.1f, 2f));
+        StartCoroutine(ChangeBGSoundVolume(0.05f, 2f));
     }
 
     IEnumerator ChangeBGSoundVolume(float finishVolume, float timer) {

@@ -16,10 +16,11 @@ public class GameUIElements : MonoBehaviour
         StartCoroutine(nameof(UnScaleScoreElements));
     }
     IEnumerator UnScaleScoreElements() {
-        for (float t = 0; t > 1.5f; t -= Time.deltaTime * 3f) {
+        for (float t = 0; t > 1f; t -= Time.deltaTime * 3f) {
             _score.transform.localScale = Vector3.one * t;
             yield return null;
         }
+        _score.transform.localScale = Vector3.one;
     }
 
     IEnumerator UpScaleScoreElements() {
@@ -27,5 +28,6 @@ public class GameUIElements : MonoBehaviour
             _score.transform.localScale = Vector3.one * t;            
             yield return null;
         }
+        _score.transform.localScale = Vector3.one * 1.5f;
     }
 }

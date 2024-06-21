@@ -109,7 +109,7 @@ public class ToysManager : MonoBehaviour {
     public void CreatePaintTool(Vector3 spawnToy) {
         Instantiate(_toyCreateEffect, spawnToy, Quaternion.identity);
         _paintTool.gameObject.SetActive(true);
-        _paintTool.PaintToolAnimation(spawnToy, transform.position);
+        _paintTool.PaintToolAnimation(spawnToy, transform.position + new Vector3(-1.4f, 0f, 0f));
     }
 
     public void CreatefinishToy() {        

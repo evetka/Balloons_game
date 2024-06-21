@@ -6,27 +6,18 @@ public class PlayerControllerWithTapGesture : MonoBehaviour {
 
     [SerializeField] private TapGesture _tapGesture;
     [SerializeField] private Balloon _baloons;
-    [SerializeField] private bool _canTapOnBalloon = false;
 
-    private void OnEnable() {
-        StartCoroutine(nameof(TapOnBalloon));
+    private void OnEnable() {        
         _tapGesture.Tapped += OnTap;
     }
 
-    private void OnDisable() {
-        _canTapOnBalloon = true;
+    private void OnDisable() {        
         _tapGesture.Tapped -= OnTap;
     }
 
     private void OnTap(object sender, System.EventArgs e) {
-        if (_canTapOnBalloon) {
             _baloons.Die();
-        }        
     }
 
-    IEnumerator TapOnBalloon() {
-        yield return new WaitForSeconds(0.4f);
-        _canTapOnBalloon = true;
-    }
 
 }
